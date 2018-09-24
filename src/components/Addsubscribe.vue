@@ -35,7 +35,11 @@
         <option value="BCHeMYR">BCH/eMYR</option>
         <option value="ETHeMYR">ETH/eMYR</option>
         <option value="USDTeMYR">USDT/eMYR</option>
-        </select>
+      </select><br>
+      <span3>User ID for the exchange market   :</span3>
+        <input type="text" name="User ID" placeholder="Email/Username"><br>
+      <span4>Password for the exchange market :</span4> 
+        <input type="text" name="Password" placeholder="Password"><br>
     </div3>
     <form action="#/signup" method="get">
       <button type="submit" >ADD</button>
@@ -124,6 +128,16 @@ button {
   margin: 6px 2px;
   border-radius: 50%;
 }
-
-
+p {
+  font-size: 30px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+span3 {
+    padding-right: 65px;
+}
+span4 {
+    padding-right: 48px;
+    line-height: 2.5;
+}
 </style>
