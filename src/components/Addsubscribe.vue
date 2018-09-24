@@ -133,5 +133,12 @@ p {
   font-family: "Times New Roman", Times, serif;
   font-weight: bold;
 }
+span3 {
+    padding-right: 65px;
+}
+span4 {
+    padding-right: 48px;
+    line-height: 2.5;
+}
 
 </style>
