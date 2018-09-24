@@ -4,10 +4,10 @@
     <div4>
       <span>Please select the indicator  :</span>
       <form action="">
-        <input type="radio"  name="Indicator" value="MACD"> MACD<br>
-        <input type="radio" name="Indicator" value="RSI"> RSI<br>
-        <input type="radio" name="Indicator" value="SMA"> SMA<br>
-        <input type="radio" name="Indicator" value="EMA"> EMA<br>
+        <input type="radio"  name="Indicator" value="MACD">MACD<br>
+        <input type="radio" name="Indicator" value="RSI">RSI<br>
+        <input type="radio" name="Indicator" value="SMA">SMA<br>
+        <input type="radio" name="Indicator" value="EMA">EMA<br>
       </form>
     </div4>
     <div2>
@@ -124,10 +124,6 @@ button {
   margin: 6px 2px;
   border-radius: 50%;
 }
-p {
-  font-size: 30px;
-  font-family: "Times New Roman", Times, serif;
-  font-weight: bold;
-}
+
 
 </style>
