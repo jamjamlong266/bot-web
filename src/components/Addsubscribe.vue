@@ -56,7 +56,9 @@ import firebase from 'firebase';
 export default {
   name: 'Addsubscribe',
   data () {
-    return {}
+    return {
+      
+    }
   },
   methods: {
     logout: function() {
