@@ -8,7 +8,7 @@ import Addsubscribe from '@/components/Addsubscribe'
 import Dashboard from '@/components/Dashboard'
 import ViewBot from '@/components/ViewBot'
 import EditBot from '@/components/EditBot'
-
+import Indicator from '@/components/Indicator'
 import firebase from 'firebase'
 
 Vue.use(Router)
@@ -60,6 +60,11 @@ let router = new Router({
       meta: {
         requiresAuth: true
       }
+    },
+    {
+      path: '/indicator',
+      name: 'Indicator',
+      component: Indicator
     }
   ]
 })
