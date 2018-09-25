@@ -25,7 +25,7 @@ let router = new Router({
     },
     {
       path: '/login',
-      name: 'login',
+      name: 'Login',
       component: Login
     },
     {
@@ -37,16 +37,6 @@ let router = new Router({
       path: '/dashboard',
       name: 'dashboard',
       component: Dashboard
-    },
-    {
-      path: '/:bot_id',
-      name: 'view-bot',
-      component: ViewBot
-    },
-    {
-      path: 'edit/:bot_id',
-      name: 'edit-bot',
-      component: EditBot
     },
     {
       path: '/hello',
