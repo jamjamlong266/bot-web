@@ -6,8 +6,6 @@ import Login from '@/components/Login'
 import SignUp from '@/components/SignUp'
 import Addsubscribe from '@/components/Addsubscribe'
 import Dashboard from '@/components/Dashboard'
-import ViewBot from '@/components/ViewBot'
-import EditBot from '@/components/EditBot'
 import Indicator from '@/components/Indicator'
 import firebase from 'firebase'
 
@@ -44,18 +42,19 @@ let router = new Router({
       component: Hello
     },
     {
+      path: '/indicator',
+      name: 'indicator',
+      component: Indicator
+    },
+    {
       path: '/addsubscribe',
       name: 'Addsubscribe',
       component: Addsubscribe,
       meta: {
         requiresAuth: true
       }
-    },
-    {
-      path: '/indicator',
-      name: 'Indicator',
-      component: Indicator
     }
+   
   ]
 })
 
