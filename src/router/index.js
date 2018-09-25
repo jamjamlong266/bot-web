@@ -7,6 +7,7 @@ import SignUp from '@/components/SignUp'
 import Addsubscribe from '@/components/Addsubscribe'
 import Dashboard from '@/components/Dashboard'
 import ViewBot from '@/components/ViewBot'
+import EditBot from '@/components/EditBot'
 
 import firebase from 'firebase'
 
@@ -31,6 +32,21 @@ let router = new Router({
       path: '/sign-up',
       name: 'SignUp',
       component: SignUp
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: Dashboard
+    },
+    {
+      path: '/:bot_id',
+      name: 'view-bot',
+      component: ViewBot
+    },
+    {
+      path: 'edit/:bot_id',
+      name: 'edit-bot',
+      component: EditBot
     },
     {
       path: '/hello',
