@@ -34,7 +34,10 @@ let router = new Router({
     {
       path: '/dashboard',
       name: 'dashboard',
-      component: Dashboard
+      component: Dashboard,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/hello',
@@ -57,7 +60,7 @@ router.beforeEach((to, from, next) => {
   let requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 
   if (requiresAuth && !currentUser) next('login')
-  else if (!requiresAuth && currentUser) next('addsubscribe')
+  else if (!requiresAuth && currentUser) next('dashboard')
   else next()
 })
 

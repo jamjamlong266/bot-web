@@ -7,17 +7,19 @@ import firebase from 'firebase'
 
 Vue.config.productionTip = false
 
-let app;
-let config = {
-  apiKey: "AIzaSyB_gFdPKrJZ77rlYmlChNkaLTVzjWqOhtE",
-  authDomain: "jonvi-18bf5.firebaseapp.com",
-  databaseURL: "https://jonvi-18bf5.firebaseio.com",
-  projectId: "jonvi-18bf5",
-  storageBucket: "jonvi-18bf5.appspot.com",
-  messagingSenderId: "8452384503"
-};
+import auth from './components/firebaseInit'
 
-firebase.initializeApp(config)
+let app;
+// let config = {
+//   apiKey: "AIzaSyB_gFdPKrJZ77rlYmlChNkaLTVzjWqOhtE",
+//   authDomain: "jonvi-18bf5.firebaseapp.com",
+//   databaseURL: "https://jonvi-18bf5.firebaseio.com",
+//   projectId: "jonvi-18bf5",
+//   storageBucket: "jonvi-18bf5.appspot.com",
+//   messagingSenderId: "8452384503"
+// };
+
+firebase.initializeApp(auth)
 firebase.auth().onAuthStateChanged(function(user) {
   if (!app) {
     /* eslint-disable no-new */

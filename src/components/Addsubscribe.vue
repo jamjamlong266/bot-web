@@ -57,10 +57,6 @@
 import firebase,{ functions } from 'firebase';
 
 export default {
-  firebase(){
-    const userId = firebase.auth().currentUser.uid
-    console.log(userId)
-  },
   name: 'addsubscribe',
   data :function() {
     return {
