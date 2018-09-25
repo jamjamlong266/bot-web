@@ -5,6 +5,8 @@ import Hello from '@/components/HelloWorld'
 import Login from '@/components/Login'
 import SignUp from '@/components/SignUp'
 import Addsubscribe from '@/components/Addsubscribe'
+import Dashboard from '@/components/Dashboard'
+import ViewBot from '@/components/ViewBot'
 
 import firebase from 'firebase'
 
@@ -22,7 +24,7 @@ let router = new Router({
     },
     {
       path: '/login',
-      name: 'Login',
+      name: 'login',
       component: Login
     },
     {
