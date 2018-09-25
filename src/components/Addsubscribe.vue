@@ -1,29 +1,29 @@
 <template>
   <div class="addsubscribe">
     <p>ADD SUBSCRIBE</p>
-    <div4>
+    <div class="indicator">
       <span>Please select the indicator  :</span>
       <form action="">
         <input type="radio"  name="Indicator" value="MACD" id="MACD">
-        <label5 for="MACD">MACD</label5>
+        <label class="macd" for="MACD">MACD</label>
         <input type="radio" name="Indicator" value="RSI" id="RSI">
-        <label6 for="RSI">RSI</label6>
+        <label class="rsi" for="RSI">RSI</label>
         <input type="radio" name="Indicator" value="SMA" id="SMA">
-        <label3 for="SMA">SMA</label3>
+        <label class="sma" for="SMA">SMA</label>
         <input type="radio" name="Indicator" value="EMA" id="EMA">
-        <label4 for="EMA">EMA</label4>
+        <label class="ema" for="EMA">EMA</label>
       </form>
-    </div4>
-    <div2>
-      <label1>Please select your exchange market :</label1>
+    </div>
+    <div class="exchange">
+      <label>Please select your exchange market :</label>
       <select id="exchange">
         <option value="COINEX">COINEX</option>
         <option value="BINANCE">BINANCE</option>
         <option value="JONVI">JONVI</option>
       </select>
-    </div2>
-    <div3>
-      <label2>Please select your trading pair :</label2>
+    </div>
+    <div class="trading_pair">
+      <label>Please select your trading pair :</label>
       <select id="pair">
         <option value="BTCUSDT">BTC/USDT</option>
         <option value="BCHUSDT">BCH/USDT</option>
@@ -40,11 +40,11 @@
         <option value="ETHeMYR">ETH/eMYR</option>
         <option value="USDTeMYR">USDT/eMYR</option>
       </select><br>
-      <span3>User ID for the exchange market   :</span3>
+      <span>User ID for the exchange market   :</span>
         <input type="text" name="User ID" placeholder="Email/Username" id="user_id" ><br>
-      <span4>Password for the exchange market :</span4> 
+      <span>Password for the exchange market :</span> 
         <input type="text" name="Password" placeholder="Password" id="user_password" ><br>
-    </div3>
+    </div>
 
     <button v-on:click="add" >ADD</button><br>
     <p id="demo"></p>
@@ -111,7 +111,7 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-label1 {
+.sma {
   margin-right: 30px;
 }
 label2 {
@@ -121,25 +121,25 @@ select {
   margin-left: 10px;
   margin-bottom: 20px;
 }
-div2 {
+div.exchange {
   margin-left: 10px;
   text-align: left;
   display: block;
 }
-div3 {
+.trading_pair {
   margin-left: 10px;
   text-align: left;
   display: block;
   margin-bottom: 40px;
 }
-label5,label6,label3,label4 {
+.macd,.rsi,label3,.ema {
   padding-left: 20px;
   padding-right: 20px;
   border-style: groove;
   margin-right: 80px;
 }
 
-div4 {
+div.indicator {
   margin-left: 10px;
   margin-bottom: 10px;
   text-align: left;
