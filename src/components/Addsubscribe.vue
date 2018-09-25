@@ -1,18 +1,22 @@
 <template>
-  <div class="hello">
+  <div class="addsubscribe">
     <p>ADD SUBSCRIBE</p>
     <div4>
       <span>Please select the indicator  :</span>
       <form action="">
-        <input type="radio"  name="Indicator" value="MACD">MACD<br>
-        <input type="radio" name="Indicator" value="RSI">RSI<br>
-        <input type="radio" name="Indicator" value="SMA">SMA<br>
-        <input type="radio" name="Indicator" value="EMA">EMA<br>
+        <input type="radio"  name="Indicator" value="MACD" id="MACD">
+        <label5 for="MACD">MACD</label5>
+        <input type="radio" name="Indicator" value="RSI" id="RSI">
+        <label6 for="RSI">RSI</label6>
+        <input type="radio" name="Indicator" value="SMA" id="SMA">
+        <label3 for="SMA">SMA</label3>
+        <input type="radio" name="Indicator" value="EMA" id="EMA">
+        <label4 for="EMA">EMA</label4>
       </form>
     </div4>
     <div2>
       <label1>Please select your exchange market :</label1>
-      <select>
+      <select id="exchange">
         <option value="COINEX">COINEX</option>
         <option value="BINANCE">BINANCE</option>
         <option value="JONVI">JONVI</option>
@@ -20,7 +24,7 @@
     </div2>
     <div3>
       <label2>Please select your trading pair :</label2>
-      <select>
+      <select id="pair">
         <option value="BTCUSDT">BTC/USDT</option>
         <option value="BCHUSDT">BCH/USDT</option>
         <option value="JEUSDT">JE/USDT</option>
@@ -37,25 +41,24 @@
         <option value="USDTeMYR">USDT/eMYR</option>
       </select><br>
       <span3>User ID for the exchange market   :</span3>
-        <input type="text" name="User ID" placeholder="Email/Username"><br>
+        <input type="text" name="User ID" placeholder="Email/Username" id="user_id" ><br>
       <span4>Password for the exchange market :</span4> 
-        <input type="text" name="Password" placeholder="Password"><br>
+        <input type="text" name="Password" placeholder="Password" id="user_password" ><br>
     </div3>
-    <form action="#/signup" method="get">
-      <button type="submit" >ADD</button>
-    </form>
 
+    <button v-on:click="add" >ADD</button><br>
+    <p id="demo"></p>
     <button v-on:click="logout">Logout</button>
   </div>
 </template>
 
 <script>
 
-import firebase from 'firebase';
+import firebase,{ functions } from 'firebase';
 
 export default {
-  name: 'Addsubscribe',
-  data () {
+  name: 'addsubscribe',
+  data :function() {
     return {
       
     }
@@ -65,6 +68,31 @@ export default {
       firebase.auth().signOut().then(() => {
         this.$router.replace('login')
       })
+    },
+    add: function() {
+      var indicator
+      var exchange
+      var pair
+      var user_id
+      var user_password
+      
+      if(document.getElementById('MACD').checked){
+        indicator = document.getElementById("MACD").value;
+      }else if(document.getElementById('RSI').checked){
+        indicator = document.getElementById("RSI").value;
+      }else if(document.getElementById('SMA').checked){
+        indicator = document.getElementById("SMA").value;
+      }else if(document.getElementById('EMA').checked){
+        indicator = document.getElementById("EMA").value;
+      }else 
+        indicator = "IS EMPTY";
+
+      exchange = document.getElementById('exchange').value;
+      pair = document.getElementById('pair').value;
+      user_id = document.getElementById('user_id').value;
+      user_password = document.getElementById('user_password').value;
+
+      document.getElementById("demo").innerHTML = user_password;
     }
   }
 }
@@ -104,18 +132,20 @@ div3 {
   display: block;
   margin-bottom: 40px;
 }
-input {
-  margin-bottom: 10px;
+label5,label6,label3,label4 {
+  padding-left: 20px;
+  padding-right: 20px;
+  border-style: groove;
+  margin-right: 80px;
 }
+
 div4 {
   margin-left: 10px;
   margin-bottom: 10px;
   text-align: left;
   display: flex;
   }
-  span {
-    margin-right: 110px;
-  }
+  
 button {
   background-color: #4CAF50;
   border: none;
@@ -135,11 +165,14 @@ p {
   font-family: "Times New Roman", Times, serif;
   font-weight: bold;
 }
+span {
+  margin-right: 110px;
+  }
 span3 {
-    padding-right: 65px;
+  padding-right: 65px;
 }
 span4 {
-    padding-right: 48px;
-    line-height: 2.5;
+  padding-right: 48px;
+  line-height: 2.5;
 }
 </style>
